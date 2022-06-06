@@ -1,5 +1,5 @@
 name: OWASP ZAP integration with GitHub Action
-on: [push]
+on: [pull_request]
 
 jobs:
   zap_scan:
