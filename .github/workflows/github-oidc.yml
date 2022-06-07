@@ -1,5 +1,7 @@
 name: Use of GitHub OIDC
 
+on: [push]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
