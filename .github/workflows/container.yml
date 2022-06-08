@@ -9,6 +9,6 @@ jobs:
       image: node:10.18.0-jessie
     steps:
       - name: log node version
-        run: !
+        run: |
           node -v
           cat etc/os-release
