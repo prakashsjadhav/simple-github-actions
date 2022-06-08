@@ -5,8 +5,8 @@ on: [push]
 jobs:
   container-jobs:
     runs-on: ubuntu-latest
-    container:
-      image: node:10.18.0-jessie
+#    container:
+#      image: node:10.18.0-jessie
     steps:
       - name: log node version
         run: |
