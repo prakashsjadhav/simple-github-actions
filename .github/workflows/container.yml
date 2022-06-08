@@ -1,0 +1,14 @@
+name: Container
+
+on: [push]
+
+jobs:
+  container-jobs:
+    runs-on: ubuntu-latest
+    container:
+      image: node:10.18.0-jessie
+    steps:
+      - name: log node version
+        run: !
+          node -v
+          cat etc/os-release
