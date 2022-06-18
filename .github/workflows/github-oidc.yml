@@ -18,7 +18,13 @@ jobs:
       with:
         role-to-assume: arn:aws:iam::365267084374:role/github-actions-role-test 
         aws-region: us-east-1
-
+    - name: setup Terraform CLI
+      uses: hashicorp/setup-terraform@v2
+    - name: Create resources with terraform commands
+      run : |
+        terraform init
+        terraform plan
+        terraform apply
     - name: Copy files to the test website with the AWS CLI
       run: |
         aws s3 sync . s3://hello-terraform-psj
