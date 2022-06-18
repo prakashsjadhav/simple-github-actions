@@ -24,7 +24,7 @@ jobs:
       run : |
         terraform init
         terraform plan
-        terraform apply
+        terraform apply -auto-approve
     - name: Copy files to the test website with the AWS CLI
       run: |
         aws s3 sync . s3://hello-terraform-psj
