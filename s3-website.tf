@@ -68,7 +68,14 @@ resource "aws_s3_bucket_policy" "website" {
             "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::${local.website_bucket_name}/*"
+            "Resource": "arn:aws:s3:::${local.website_bucket_name}/*",
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": [
+                       "103.177.180.18/32"
+                    ]
+                }
+            }
         }
     ]
   }
@@ -83,5 +90,3 @@ resource "aws_s3_bucket_public_access_block" "website_bucket_public_access_block
   restrict_public_buckets = false
   block_public_policy     = false
 }
-
-#upload the object
