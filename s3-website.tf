@@ -76,7 +76,6 @@ resource "aws_s3_bucket_policy" "website" {
 }
 
 resource "aws_s3_bucket_public_access_block" "website_bucket_public_access_block" {
-  provider = aws.main
 
   bucket                  = aws_s3_bucket.website.id
   ignore_public_acls      = true
