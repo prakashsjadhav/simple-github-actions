@@ -59,7 +59,7 @@ resource "aws_s3_bucket_website_configuration" "website" {
 
 resource "aws_s3_bucket_policy" "website" {
   bucket = aws_s3_bucket.website.id
-  policy = << EOF
+  policy = <<EOF
    {
     "Version": "2012-10-17",
     "Statement": [
