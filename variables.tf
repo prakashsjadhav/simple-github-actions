@@ -16,7 +16,7 @@ variable "s3_region" {
 variable "s3_bucket_override_name" {
   description = "Override name for S3 Bucket"
   type = string
-  default = "ops-portal-UI"
+  default = "ops-portal-ui"
 }
 
 variable "website_versioning_status" {
