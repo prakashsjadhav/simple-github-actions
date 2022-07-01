@@ -22,7 +22,6 @@ jobs:
       uses: hashicorp/setup-terraform@v2
     - name: Create resources with terraform commands
       run : |
- #       terraform destroy
         terraform init
         terraform plan
         terraform apply -auto-approve
