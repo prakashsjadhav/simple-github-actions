@@ -9,13 +9,13 @@ variable "environment" {
 }
 
 variable "s3_region" {
-  type = "string"
+  type = string
   default = "eu-west-2"
 }
 
 variable "s3_bucket_override_name" {
   description = "Override name for S3 Bucket"
-  type = "string"
+  type = string
   default = "ops-portal-UI"
 }
 
