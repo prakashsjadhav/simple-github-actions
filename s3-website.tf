@@ -65,7 +65,7 @@ resource "aws_s3_bucket_policy" "website" {
     "Statement": [
         {
             "Sid": "PublicReadGetObject",
-            "Effect": "Deny",
+            "Effect": "Allow",
             "Principal": "*",
             "Action": "s3:GetObject",
             "Resource": "arn:aws:s3:::${local.website_bucket_name}/*",
