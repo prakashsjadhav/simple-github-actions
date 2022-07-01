@@ -83,3 +83,5 @@ resource "aws_s3_bucket_public_access_block" "website_bucket_public_access_block
   restrict_public_buckets = true
   block_public_policy     = true
 }
+
+#upload the object
