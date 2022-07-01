@@ -22,9 +22,10 @@ jobs:
       uses: hashicorp/setup-terraform@v2
     - name: Create resources with terraform commands
       run : |
-        terraform init
-        terraform plan
-        terraform apply -auto-approve
+        #terraform init
+        #terraform plan
+        #terraform apply -auto-approve
+        terraform destroy
     - name: Copy files to the test website with the AWS CLI
       run: |
         aws s3 sync . s3://hello-terraform-psj
