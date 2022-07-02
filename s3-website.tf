@@ -60,7 +60,9 @@ data "template_file" "policy" {
 
 resource "aws_s3_bucket_policy" "website" {
   bucket = aws_s3_bucket.website.id
-  policy = data.template_file.policy.rendered
+# policy = data.template_file.policy.rendered
+  policy = templatefile("${path.module}/template/website_bucket_policy_json", {
+    bucket_name = local.website_bucket_name 
 }
 
 resource "aws_s3_bucket_public_access_block" "website_bucket_public_access_block" {
