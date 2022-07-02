@@ -52,7 +52,7 @@ resource "aws_s3_bucket_website_configuration" "website" {
 
 resource "aws_s3_bucket_policy" "website" {
   bucket = aws_s3_bucket.website.id
-  policy = templatefile("${path.module}/template/s3_website_bucket_policy.json", {
+  policy = templatefile("s3_website_bucket_policy.json", {
   bucket_name = local.website_bucket_name
   })
 }
