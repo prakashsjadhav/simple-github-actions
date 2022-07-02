@@ -23,6 +23,7 @@ jobs:
     - name: Create resources with terraform commands
       run : |
         pwd
+        ls
         terraform init
         terraform plan
         terraform apply -auto-approve
