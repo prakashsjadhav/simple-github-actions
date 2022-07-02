@@ -50,11 +50,18 @@ resource "aws_s3_bucket_website_configuration" "website" {
 #  }
 }
 
-resource "aws_s3_bucket_policy" "website" {
-  bucket = aws_s3_bucket.website.id
-  policy = templatefile("${path.module}/website_bucket_policy.json", {"bucket_name" = local.website_bucket_name})
+
+data "template_file" "policy" {
+  template = file("website_bucket_policy.json")
+  vars = {
+    bucket_name" = local.website_bucket_name
+  }
 }
 
+resource "aws_s3_bucket_policy" "website" {
+  bucket = aws_s3_bucket.website.id
+  policy = data.template_file.policy.rendered
+}
 
 resource "aws_s3_bucket_public_access_block" "website_bucket_public_access_block" {
 
