@@ -54,7 +54,7 @@ resource "aws_s3_bucket_website_configuration" "website" {
 data "template_file" "policy" {
   template = file("website_bucket_policy.json")
   vars = {
-    bucket_name" = local.website_bucket_name
+    "bucket_name" = local.website_bucket_name
   }
 }
 
